@@ -3,15 +3,21 @@ import logo from './logo.svg';
 import './App.css';
 import { API } from 'aws-amplify';
 
-const response = await API.get('pythonapi', '/hello');
 function App() {
-  const response = await API.get('pythonapi', '/hello');
-
+  const [greeting, setGreeting] = useState(null)
+  async function fetchGreeting() {
+   const response = await API.get('pythonapi', '/hello');
+   setGreeting(response.message)
+  }
+  useEffect(() => {
+    fetchGreeting()
+  }, [])
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <h1>grng</h1>
+        <h1>{greeting}</h1>
       </header>
     </div>
   );
