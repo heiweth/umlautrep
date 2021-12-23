@@ -1,9 +1,9 @@
 {
   "version": 1,
   "paths": {
-    "/items": {
-      "name": "/items",
-      "lambdaFunction": "umlautlambda",
+    "/hello": {
+      "name": "/hello",
+      "lambdaFunction": "greetingfunction",
       "permissions": {
         "setting": "open"
       }

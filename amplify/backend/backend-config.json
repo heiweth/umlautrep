@@ -1,19 +1,19 @@
 {
   "function": {
-    "umlautlambda": {
+    "greetingfunction": {
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     }
   },
   "api": {
-    "umlautapi": {
+    "pythonapi": {
       "service": "API Gateway",
       "providerPlugin": "awscloudformation",
       "dependsOn": [
         {
           "category": "function",
-          "resourceName": "umlautlambda",
+          "resourceName": "greetingfunction",
           "attributes": [
             "Name",
             "Arn"
