@@ -15,7 +15,16 @@
       "function": {
         "greetingfunction": {
           "deploymentBucketName": "amplify-amplifyf4386ca436be4-staging-162322-deployment",
-          "s3Key": "amplify-builds/greetingfunction-7537752f694f3230517a-build.zip"
+          "s3Key": "amplify-builds/greetingfunction-6d486747414836445679-build.zip"
+        }
+      },
+      "auth": {
+        "umlautrepc8dd38c0": {}
+      },
+      "storage": {
+        "umlautrep398545a0": {
+          "bucketName": "sanja-web-files",
+          "region": "eu-west-1"
         }
       }
     }
