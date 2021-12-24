@@ -6,14 +6,14 @@ const awsmobile = {
     "aws_cloud_logic_custom": [
         {
             "name": "pythonapi",
-            "endpoint": "https://kc76udpiz5.execute-api.eu-west-1.amazonaws.com/staging",
+            "endpoint": "https://xs4p80dihg.execute-api.eu-west-1.amazonaws.com/dev",
             "region": "eu-west-1"
         }
     ],
-    "aws_cognito_identity_pool_id": "eu-west-1:f5d52403-1c64-4861-8728-c0c4f2fadaa2",
+    "aws_cognito_identity_pool_id": "eu-west-1:375da9ac-2f19-4cd9-888d-0ec478209213",
     "aws_cognito_region": "eu-west-1",
-    "aws_user_pools_id": "eu-west-1_1um1iujgu",
-    "aws_user_pools_web_client_id": "66e7mf5o6cvh1ci0ev0bp2e5cg",
+    "aws_user_pools_id": "eu-west-1_XWKqbDLZs",
+    "aws_user_pools_web_client_id": "4grt9m7js86e3jt1rejkkj7h",
     "oauth": {},
     "aws_cognito_username_attributes": [],
     "aws_cognito_social_providers": [],

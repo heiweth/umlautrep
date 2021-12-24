@@ -13,11 +13,12 @@ def handler(event, context):
     s3 = boto3.resource('s3')
     my_bucket = s3.Bucket(bucket)
 
+
     json_data = []
     datestamp = dt.datetime.now().strftime("%Y/%m/%d")
     timestamp = dt.datetime.now().strftime("%s")
 
-    for my_bucket_object in my_bucket.objects.all():
+    for my_bucket_object in my_bucket.objects.filter(Prefix="public/"):
         bucket_name = bucket
         key_name = my_bucket_object.key
 
@@ -27,9 +28,10 @@ def handler(event, context):
 
         json_data = []
 
-        s3_object = s3_client.get_object(Bucket=bucket_name, Prefix=preefix, Key=key_name)
+        s3_object = s3_client.get_object(Bucket=bucket_name, Key=key_name)
         data = s3_object['Body'].read()
         contents = data.decode('utf-8')
+
 
         with open(filename_csv, 'a') as csv_data:
             csv_data.write(contents)

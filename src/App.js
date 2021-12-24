@@ -7,7 +7,7 @@ function App() {
   const [greeting, setGreeting] = useState(null)
   async function fetchGreeting() {
    const response = await API.get('pythonapi', '/hello');
-   setGreeting(response.message)
+   setGreeting(response)
   }
   useEffect(() => {
     fetchGreeting()
@@ -16,7 +16,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <h1>grneeeg</h1>
+        <h1>xmas</h1>
         <h1>{greeting}</h1>
       </header>
     </div>

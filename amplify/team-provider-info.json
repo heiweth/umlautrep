@@ -28,5 +28,35 @@
         }
       }
     }
+  },
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-umlautrep-dev-112734-authRole",
+      "UnauthRoleArn": "arn:aws:iam::342763434935:role/amplify-umlautrep-dev-112734-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::342763434935:role/amplify-umlautrep-dev-112734-authRole",
+      "Region": "eu-west-1",
+      "DeploymentBucketName": "amplify-umlautrep-dev-112734-deployment",
+      "UnauthRoleName": "amplify-umlautrep-dev-112734-unauthRole",
+      "StackName": "amplify-umlautrep-dev-112734",
+      "StackId": "arn:aws:cloudformation:eu-west-1:342763434935:stack/amplify-umlautrep-dev-112734/20515ce0-64a4-11ec-aa55-025736588fef",
+      "AmplifyAppId": "d2ffcae85bfmgs"
+    },
+    "categories": {
+      "function": {
+        "greetingfunction": {
+          "deploymentBucketName": "amplify-umlautrep-dev-112734-deployment",
+          "s3Key": "amplify-builds/greetingfunction-534153364b5a744f2b63-build.zip"
+        }
+      },
+      "auth": {
+        "umlautrepc8dd38c0": {}
+      },
+      "storage": {
+        "umlautrep398545a0": {
+          "bucketName": "sanja-web-files",
+          "region": "eu-west-1"
+        }
+      }
+    }
   }
 }
