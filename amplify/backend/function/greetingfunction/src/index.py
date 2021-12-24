@@ -42,7 +42,7 @@ def handler(event, context):
     os.remove(filename_csv)
 
     body = {
-        'message': 'Hi, the current time is sanja'
+        'message': json_data[0]
     }
 
     response = {
