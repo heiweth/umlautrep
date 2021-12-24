@@ -53,10 +53,11 @@ def handler(event, context):
         'body': json_data,
         'headers': {
             'Content-Type': 'application/json',
-            "Access-Control-Allow-Headers": "*",
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Methods": "*"
+            'Access-Control-Allow-Headers': 'Content-Type',
+            'Access-Control-Allow-Origin': 'https://main.d2ffcae85bfmgs.amplifyapp.com/',
+            'Access-Control-Allow-Methods': 'OPTIONS,POST,GET'
         },
     }
 
     return response
+
