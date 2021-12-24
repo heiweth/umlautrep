@@ -15,7 +15,7 @@
       "function": {
         "greetingfunction": {
           "deploymentBucketName": "amplify-amplifyf4386ca436be4-staging-162322-deployment",
-          "s3Key": "amplify-builds/greetingfunction-5076346e314f4e503546-build.zip"
+          "s3Key": "amplify-builds/greetingfunction-5870327a6f7a335a4639-build.zip"
         }
       },
       "auth": {

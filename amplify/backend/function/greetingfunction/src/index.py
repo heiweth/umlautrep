@@ -9,7 +9,7 @@ def handler(event, context):
     current_time = dt.datetime.now().time()
     bucket = 'sanja-web-files'
     s3_client = boto3.client("s3")
-    prefix = 'PREFIX_HERE'
+    prefix = 'public'
     s3 = boto3.resource('s3')
     my_bucket = s3.Bucket(bucket)
 
@@ -27,10 +27,11 @@ def handler(event, context):
 
         json_data = []
 
-        s3_object = s3_client.get_object(Bucket=bucket_name, Key=key_name)
+        s3_object = s3_client.get_object(Bucket=bucket_name, Prefix=preefix, Key=key_name)
         data = s3_object['Body'].read()
         contents = data.decode('utf-8')
 
+        '''
         with open(filename_csv, 'a') as csv_data:
             csv_data.write(contents)
 
@@ -39,10 +40,11 @@ def handler(event, context):
             for csv_row in csv_reader:
                 json_data.append(csv_row)
 
-    os.remove(filename_csv)
+        '''
+#    os.remove(filename_csv)
 
     body = {
-        'message': json_data[0]
+        'message': 'Hi, the current time is sanja'
     }
 
     response = {
