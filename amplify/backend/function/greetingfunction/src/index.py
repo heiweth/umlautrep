@@ -50,7 +50,7 @@ def handler(event, context):
 
     response = {
         'statusCode': 200,
-        'body': json.dumps(body),
+        'body': json_data,
         'headers': {
             'Content-Type': 'application/json',
             "Access-Control-Allow-Headers": "*",
