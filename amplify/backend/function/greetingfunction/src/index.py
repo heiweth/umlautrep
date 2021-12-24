@@ -31,7 +31,6 @@ def handler(event, context):
         data = s3_object['Body'].read()
         contents = data.decode('utf-8')
 
-        '''
         with open(filename_csv, 'a') as csv_data:
             csv_data.write(contents)
 
@@ -40,11 +39,11 @@ def handler(event, context):
             for csv_row in csv_reader:
                 json_data.append(csv_row)
 
-        '''
-#    os.remove(filename_csv)
+
+    os.remove(filename_csv)
 
     body = {
-        'message': 'Hi, the current time is sanja'
+        'message': json_data[0]
     }
 
     response = {
