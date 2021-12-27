@@ -4,11 +4,12 @@ import './App.css';
 import { API } from 'aws-amplify';
 import { Amplify } from 'aws-amplify';
 
-import { withAuthenticator } from '@aws-amplify/ui-react';
+import { Authenticator } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 
 import awsExports from './aws-exports';
 Amplify.configure(awsExports);
+
 
 function App() {
   const [greeting, setGreeting] = useState(null)
@@ -26,10 +27,14 @@ function App() {
         <h1>xmas</h1>
         <h1>{greeting}</h1>
       </header>
-      <body>
-      <h1>Hello {user.username}</h1>
-      <button onClick={signOut}>Sign out</button>
-      </body>
+    <Authenticator>
+      {({ signOut, user }) => (
+        <main>
+          <h1>Hello {user.username}</h1>
+          <button onClick={signOut}>Sign out</button>
+        </main>
+      )}
+    </Authenticator>
     </div>
   );
 }
