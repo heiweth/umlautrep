@@ -45,17 +45,17 @@ def handler(event, context):
     os.remove(filename_csv)
 
     body = {
-        'message': json_data[0]
+        'message': {"sanja":"bravo"}
     }
 
     response = {
         'statusCode': 200,
-        'body': json_data,
+        'body': json.dumps(body),
         'headers': {
             'Content-Type': 'application/json',
             'Access-Control-Allow-Headers': 'Content-Type',
             'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Methods': '*'
+            'Access-Control-Allow-Methods': 'GET,POST,PUT'
         },
     }
 
