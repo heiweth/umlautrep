@@ -1,0 +1,10 @@
+[
+  {
+    "groupName": "umlautGroup",
+    "precedence": 1
+  },
+  {
+    "groupName": "umlautUser",
+    "precedence": 2
+  }
+]
