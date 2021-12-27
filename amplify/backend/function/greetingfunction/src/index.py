@@ -45,7 +45,7 @@ def handler(event, context):
     os.remove(filename_csv)
 
     body = {
-        'message': {"sanja":"bravo"}
+        'message': "sanja bravo"
     }
 
     response = {

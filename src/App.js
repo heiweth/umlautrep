@@ -22,16 +22,16 @@ function App() {
   }, [])
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1>xmas</h1>
-        <h1>{greeting}</h1>
-      </header>
-    <Authenticator>
+    <Authenticator loginMechanisms={['username']}>
       {({ signOut, user }) => (
         <main>
           <h1>Hello {user.username}</h1>
           <button onClick={signOut}>Sign out</button>
+          <header className="App-header">
+            <img src={logo} className="App-logo" alt="logo" />
+            <h1>xmas</h1>
+            <h1>{greeting}</h1>
+          </header>
         </main>
       )}
     </Authenticator>
