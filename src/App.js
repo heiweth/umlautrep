@@ -15,6 +15,7 @@ function App() {
   const [greeting, setGreeting] = useState(null)
   async function fetchGreeting() {
    const response = await API.get('pythonapi', '/hello');
+   alert(response)
    setGreeting(response.message)
   }
   useEffect(() => {
