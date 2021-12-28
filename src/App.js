@@ -10,17 +10,20 @@ import '@aws-amplify/ui-react/styles.css';
 import awsExports from './aws-exports';
 Amplify.configure(awsExports);
 
-
 function App() {
-  const [greeting, setGreeting] = useState(null)
-  async function fetchGreeting() {
-   const response = await API.get('pythonapi', '/hello');
-   alert(response.body)
-   setGreeting(response.message)
+//  const response = await API.get('pythonapi', '/hello');
+  const [users, setUsers] = useState([])
+
+  const fetchData = async () => {
+    const response = await API.get('pythonapi', '/hello')
+    const data = response.body
+    setUsers(data)
   }
+
   useEffect(() => {
-    fetchGreeting()
+    fetchData()
   }, [])
+
   return (
     <div className="App">
     <Authenticator loginMechanisms={['username']}>
@@ -31,7 +34,13 @@ function App() {
           <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
             <h1>xmas</h1>
-            <h1>{greeting}</h1>
+            <div>
+              {users.length > 0 && (
+                <ul>
+                  {users}
+                </ul>
+              )}
+            </div>
           </header>
         </main>
       )}

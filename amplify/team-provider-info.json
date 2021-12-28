@@ -45,7 +45,7 @@
       "function": {
         "greetingfunction": {
           "deploymentBucketName": "amplify-umlautrep-dev-112734-deployment",
-          "s3Key": "amplify-builds/greetingfunction-367a6d35313538776877-build.zip"
+          "s3Key": "amplify-builds/greetingfunction-4a6d4e55315174446a61-build.zip"
         }
       },
       "auth": {
