@@ -34,7 +34,7 @@ function App() {
             <button onClick={signOut}>Sign out</button>
             <button onClick={fetchData}>Fetch Data</button>
             <div>
-              {users.length > 0 && (
+              {users && (
                 <ul>
                   {users}
                 </ul>
