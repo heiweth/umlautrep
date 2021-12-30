@@ -45,11 +45,12 @@
       "function": {
         "greetingfunction": {
           "deploymentBucketName": "amplify-umlautrep-dev-112734-deployment",
-          "s3Key": "amplify-builds/greetingfunction-4a6d4e55315174446a61-build.zip"
+          "s3Key": "amplify-builds/greetingfunction-79446436496674352b2f-build.zip"
         }
       },
       "auth": {
-        "umlautrepc8dd38c0": {}
+        "umlautrepc8dd38c0": {},
+        "userPoolGroups": {}
       },
       "storage": {
         "umlautrep398545a0": {

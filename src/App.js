@@ -11,7 +11,6 @@ import awsExports from './aws-exports';
 Amplify.configure(awsExports);
 
 function App() {
-//  const response = await API.get('pythonapi', '/hello');
   const [users, setUsers] = useState([])
 
   const fetchData = async () => {
@@ -29,11 +28,11 @@ function App() {
     <Authenticator loginMechanisms={['username']}>
       {({ signOut, user }) => (
         <main>
-          <h1>Hello {user.username}</h1>
-          <button onClick={signOut}>Sign out</button>
           <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
-            <h1>xmas</h1>
+            <h1>Merry Xmas {user.username}</h1>
+            <button onClick={signOut}>Sign out</button>
+            <button onClick={fetchData}>Fetch Data</button>
             <div>
               {users.length > 0 && (
                 <ul>
