@@ -17,13 +17,15 @@ def handler(event, context):
     for my_bucket_object in my_bucket.objects.filter(Prefix=prefix):
         if my_bucket_object.key.endswith('csv'):
             print(my_bucket_object.key)
-            bucket_name = bucket
             key_name = my_bucket_object.key
 
-            s3_object = s3_client.get_object(Bucket=bucket_name, Key=key_name)
-            data = s3_object['Body'].read().decode('utf-8')
-            df_s3_data = pd.read_csv(data)
+            s3_object = s3_client.get_object(Bucket=bucket, Key=key_name)
+            data = s3_object['Body']
+            print(data)
+            df_s3_data = pd.read_csv(s3_object['Body'])
             print(df_s3_data.head())
+            df_json = df_s3_data.to_json(orient='records')
+            print(df_json)
 
     body = {
         'message': "sanja bravo"
@@ -31,7 +33,7 @@ def handler(event, context):
 
     response = {
         'statusCode': 200,
-        'body': json.dumps(df_s3_data),
+        'body': df_json,
         'headers': {
             'Content-Type': 'application/json',
             'Access-Control-Allow-Headers': 'Content-Type',
