@@ -21,11 +21,9 @@ def handler(event, context):
 
             s3_object = s3_client.get_object(Bucket=bucket, Key=key_name)
             data = s3_object['Body']
-            print(data)
             df_s3_data = pd.read_csv(s3_object['Body'])
-            print(df_s3_data.head())
-            df_json = df_s3_data.to_json(orient='records')
-            print(df_json)
+            df_headers = df_s3_data.columns
+            df_json = json.loads(df_s3_data.to_json(orient='records'))
 
     body = {
         'message': "sanja bravo"
