@@ -23,15 +23,13 @@ def handler(event, context):
             data = s3_object['Body']
             df_s3_data = pd.read_csv(s3_object['Body'])
             df_headers = df_s3_data.columns
+            columns = df_headers.tolist()
             df_json = json.loads(df_s3_data.to_json(orient='records'))
-
-    body = {
-        'message': "sanja bravo"
-    }
 
     response = {
         'statusCode': 200,
         'body': df_json,
+        'columns': columns,
         'headers': {
             'Content-Type': 'application/json',
             'Access-Control-Allow-Headers': 'Content-Type',

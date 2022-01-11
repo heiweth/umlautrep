@@ -16,11 +16,8 @@
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
 }
 
@@ -35,4 +32,52 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+/* Sign In */
+[data-amplify-authenticator] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  height: 100vh;
+}
+
+/* Table.js */
+.sticky-column {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0
+}
+
+.container {
+    max-height: 500px;
+    overflow-y: scroll;
+    width: 100%;
+    border-spacing: 0;
+}
+
+table {
+    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    text-indent: initial;
+    border-spacing: 0px;
+    border-color: gray;
+    font-size: 10px;
+}
+
+th {
+    background: white;
+    color: black;
+    fontWeight: bold;
+    position: sticky;
+    top: 0px;
+    border: 1px solid black;
+}
+
+td {
+    color: black;
+    border: solid grey 0.25px;
 }
