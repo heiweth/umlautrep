@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useTable, useFilters, useSortBy} from 'react-table'
-import { ColumnFilter } from './components/ColumnFilter.js'
-import { Line } from 'react-chartjs-2';
-
 
 function SensorTable({ columns, data }) {
   const {
@@ -64,9 +61,6 @@ function SensorContainer() {
   const [columns, setColumns] = useState([]);
   const [typeOfCalc, setType] = useState([]);
   const [aggLvl, setAggLvl] = useState([]);
-  const [Chartloading, setChartLoading] = useState(false);
-  const [dataChart, setDataChart] = useState({});
-
 
   const fetchData = () => {
     fetch("https://xs4p80dihg.execute-api.eu-west-1.amazonaws.com/dev/hello")
@@ -82,7 +76,6 @@ function SensorContainer() {
             erab: eachSensorItem["VoLTE E-RAB (QCI1) Success Rate (Voice) (%)"],
         }))
 
-        console.log(optionType[0])
         let types = []
         let agg_lvl = []
         let dates = []
@@ -110,15 +103,6 @@ function SensorContainer() {
         setType(utypes)
         setAggLvl(uagg_lvl)
 
-        setDataChart({
-                labels: dates,
-                datasets: [{
-                    fill: false,
-                    borderColor: "#742774",
-                    label: 'Confirmed cases',
-                    data:  erab,
-                }]
-        })
         setSensors(requiredDataFromResponse)
         let columns = [];
         let headers = data.columns;
@@ -133,20 +117,16 @@ function SensorContainer() {
         setColumns(columns)
       })
       .catch(error => {
-        console.log('greska')
         setSensors([]); // reset the [] here - this is optional and is based on expected behaviour
-        setDataChart({});
         console.log(error);
       })
       .finally(() => {
         setLoading(false)
-        setChartLoading(false)
       })
   }
 
   useEffect(() => {
     setLoading(true);
-    setChartLoading(true)
     fetchData()
   }, []);
 
@@ -166,9 +146,6 @@ function SensorContainer() {
         </select>
       {loading && <span>Please wait we are fetching table data</span>}
       <SensorTable columns={columns} data={sensors} />
-      {Chartloading && <span>Please wait we are fetching chart data</span>}
-      <Line data={dataChart}/>
-
     </div>
   );
 }
