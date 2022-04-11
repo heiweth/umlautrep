@@ -15,7 +15,7 @@ function SensorTable({ columns, data }) {
 
   // Render the UI for your table
   return (
-    <table {...getTableProps()}>
+    <table name="KPI_Table" {...getTableProps()}>
       <thead>
         {headerGroups.map(headerGroup => (
           <tr {...headerGroup.getHeaderGroupProps()}>
